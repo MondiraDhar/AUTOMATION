@@ -1,0 +1,42 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+public class program_login {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mondiraonti\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+		driver.findElement(By.id("email")).sendKeys("mondira@gmail.com"); //Enter email
+        driver.findElement(By.id("passwd")).sendKeys("54321"); //Enter Password
+        driver.findElement(By.id("SubmitLogin")).click(); //Click submit
+        
+        driver.findElement(By.xpath("//*[@id=\"block_top_menu\"]/ul/li[2]/a")).click(); //Dresses
+        driver.findElement(By.xpath("//*[@id=\"subcategories\"]/ul/li[1]/div[1]/a/img")).click(); //Casual dress
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li/div/div[2]/div[2]/a[1]")).click(); //Add a dress to the cart
+        driver.findElement(By.xpath("//*[@id=\"category\"]")).click(); //Continue shopping
+        
+        driver.findElement(By.xpath("//*[@id=\"block_top_menu\"]/ul/li[3]/a")).click(); //Click t shirt
+        driver.findElement(By.xpath("//*[@id=\"ul_layered_id_attribute_group_3\"]/li[2]/label/a")).click(); //Fliter Blue colour
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li/div/div[2]/div[2]/a[1]")).click(); //Add a dress to the cart
+        driver.findElement(By.xpath("//*[@id=\"category\"]")).click(); //Continue shopping
+        driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")).click(); //View My Cart
+        driver.findElement(By.xpath("//*[@id=\"button_order_cart\"]")).click(); //checkout
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/p[2]/a[1]")).click(); // agaiin proceed
+        driver.findElement(By.cssSelector("#center_column > p.cart_navigation.clearfix > a.button.btn.btn-default.standard-checkout.button-medium")).click(); //Again proceed to checkout
+        
+        driver.findElement(By.id("cgv")).click(); //Agree to terms and conditions
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/form/p/button")).click(); //Again proceed to checkout
+        driver.findElement(By.xpath("//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p/a")).click(); 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														 //Payment bny check
+        driver.findElement(By.xpath("//*[@id=\"cart_navigation\"]/button")).click(); //I confirm my order
+        driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a\r\n")).click(); //Sign Out
+	}
+
+}
